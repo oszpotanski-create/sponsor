@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Sponsorska 2027 - W Ogniu Pytań</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 70px 20px;
+            background: linear-gradient(135deg, #ff4d00 0%, #ff6b00 50%, #ff8c00 100%);
+            border-radius: 25px;
+            margin-bottom: 60px;
+            box-shadow: 0 15px 50px rgba(255, 77, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            animation: headerPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes headerPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-10%, -10%) scale(1.1); }
+        }
+
+        .logo-section {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .podcast-logo {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .podcast-logo:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        h1 {
+            font-size: 3.8em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-text {
+            font-size: 1.25em;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px 30px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stats-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #ff6b00;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(255, 107, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .stat-card:hover::before { opacity: 1; }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            border-color: #ff6b00;
+            box-shadow: 0 20px 50px rgba(255, 107, 0, 0.5);
+            background: linear-gradient(135deg, #3d2d1d 0%, #4d3d2d 100%);
+        }
+
+        .stat-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 15px rgba(255, 107, 0, 0.3));
+            transition: all 0.4s ease;
+            display: inline-block;
+        }
+
+        .stat-card:hover .stat-icon {
+            transform: scale(1.2) rotateY(360deg);
+            filter: drop-shadow(0 10px 25px rgba(255, 107, 0, 0.6));
+        }
+
+        .stat-number {
+            font-size: 2.8em;
+            font-weight: bold;
+            color: #ff6b00;
+            margin-bottom: 15px;
+            text-shadow: 0 3px 15px rgba(255, 107, 0, 0.5);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover .stat-number {
+            color: #ff8c00;
+            text-shadow: 0 5px 25px rgba(255, 140, 0, 0.8);
+            transform: scale(1.1);
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* PLACEMENT DIAGRAM */
+        .placement-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .placement-section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #ff6b00;
+        }
+
+        .placement-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.8;
+            margin-bottom: 50px;
+        }
+
+        .timeline-wrapper {
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .timeline {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .tl-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tl-bar {
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 0 16px;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tl-label {
+            font-size: 12px;
+            opacity: 0.6;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .tl-arrow {
+            color: rgba(255,255,255,0.2);
+            font-size: 22px;
+            padding-bottom: 28px;
+            flex-shrink: 0;
+        }
+
+        .tl-intro   { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.5); width: 100px; }
+        .tl-excl    { background: rgba(255,107,0,0.25); color: #ff8c00; border: 2px solid rgba(255,107,0,0.5); width: 150px; }
+        .tl-content { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.25); width: 120px; }
+        .tl-prem    { background: rgba(33,150,243,0.2); color: #64b5f6; border: 2px solid rgba(33,150,243,0.4); width: 120px; }
+        .tl-std     { background: rgba(76,175,80,0.15); color: #81c784; border: 2px solid rgba(76,175,80,0.3); width: 120px; }
+
+        .rolki-note {
+            background: rgba(255,255,255,0.04);
+            border-left: 4px solid #ff6b00;
+            border-radius: 0 12px 12px 0;
+            padding: 20px 24px;
+            font-size: 1em;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .rolki-note strong { color: #ff6b00; }
+
+        /* PACKAGES */
+        .packages-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #ff6b00;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .package-card {
+            background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+            border-radius: 25px;
+            padding: 45px 35px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid transparent;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        .package-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at top right, rgba(255, 107, 0, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .package-card:hover::before { opacity: 1; }
+
+        .package-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(255, 107, 0, 0.5);
+        }
+
+        .package-card.standard {
+            border-color: #4CAF50;
+        }
+        .package-card.standard:hover {
+            box-shadow: 0 25px 60px rgba(76, 175, 80, 0.4);
+        }
+
+        .package-card.premium {
+            border-color: #2196F3;
+        }
+        .package-card.premium:hover {
+            box-shadow: 0 25px 60px rgba(33, 150, 243, 0.4);
+        }
+
+        .package-card.exclusive {
+            border-color: #ff6b00;
+            background: linear-gradient(135deg, #3d2d1d 0%, #4d3d2d 100%);
+        }
+        .package-card.exclusive:hover {
+            box-shadow: 0 25px 60px rgba(255, 107, 0, 0.6);
+            background: linear-gradient(135deg, #4d3d2d 0%, #5d4d3d 100%);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .standard .package-badge { background: #4CAF50; }
+        .premium  .package-badge { background: #2196F3; }
+        .exclusive .package-badge { background: #ff6b00; }
+
+        .package-name {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .package-slots-info {
+            text-align: center;
+            font-size: 1em;
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .slots-dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .slot-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4CAF50;
+            box-shadow: 0 0 6px rgba(76,175,80,0.6);
+        }
+
+        .slots-available {
+            text-align: center;
+            font-size: 0.95em;
+            color: #81c784;
+            margin-bottom: 20px;
+        }
+
+        .package-price {
+            text-align: center;
+            font-size: 2.5em;
+            color: #ff6b00;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .package-period {
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .package-features li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .package-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ff6b00;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .package-features li.no-feature:before {
+            content: "✗";
+            color: rgba(255,255,255,0.2);
+        }
+
+        .package-features li.no-feature {
+            opacity: 0.4;
+        }
+
+        .feature-divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin: 10px 0 10px -30px;
+        }
+
+        .package-cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #ff4d00 0%, #ff8c00 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 77, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 77, 0, 0.5);
+        }
+
+        .custom-section {
+            background: rgba(255, 107, 0, 0.1);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            margin-bottom: 60px;
+            border: 2px solid rgba(255, 107, 0, 0.3);
+        }
+
+        .custom-section h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ff6b00;
+        }
+
+        .custom-section p {
+            font-size: 1.3em;
+            line-height: 1.8;
+        }
+
+        .info-section {
+            margin-bottom: 60px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(255, 107, 0, 0.3);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b00;
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
+        }
+
+        .info-icon { font-size: 3em; margin-bottom: 15px; }
+
+        .info-card h4 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #ff6b00;
+        }
+
+        .info-card p {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .info-explanation {
+            font-size: 0.95em;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .faq-section { margin-bottom: 60px; }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px 30px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6b00;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .faq-question {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ff6b00;
+            margin-bottom: 15px;
+        }
+
+        .faq-answer {
+            font-size: 1.05em;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .discount-banner {
+            background: linear-gradient(135deg, #ff4d00 0%, #ff8c00 100%);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 40px rgba(255, 77, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .discount-banner::before {
+            content: "";
+            position: absolute;
+            top: -50%; right: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .discount-icon { font-size: 4em; margin-bottom: 20px; position: relative; z-index: 1; }
+
+        .discount-banner h3 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .discount-banner p {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight-big {
+            font-size: 1.4em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .discount-subtext { font-size: 1.1em !important; opacity: 0.9; }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-title {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #ff6b00;
+        }
+
+        .contact-info {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: #ff6b00;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-info a:hover { opacity: 0.7; }
+
+        .oscarro-brand {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .oscarro-logo {
+            font-size: 1.5em;
+            color: #ff6b00;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .oscarro-tagline { font-style: italic; opacity: 0.8; }
+
+        .highlight { color: #ff6b00; font-weight: bold; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            .subtitle { font-size: 1.1em; }
+            .packages-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <div class="logo-section">
+                <div class="podcast-logo">🎙️</div>
+            </div>
+            <h1>OFERTA SPONSORSKA</h1>
+            <p style="font-size: 1.1em; opacity: 0.85; margin-bottom: 10px; position: relative; z-index: 1;">obowiązuje od 1 lipca 2026</p>
+            <p class="subtitle">Podcast "W Ogniu Pytań"</p>
+            <p class="intro-text">
+                Szukasz <strong>autentycznego i zaangażowanego miejsca</strong> na promocję swojej marki?<br><br>
+                "W Ogniu Pytań" to przestrzeń, w której reklamy pojawiają się <strong>nienachalnie</strong>
+                – w formie partnerskiej i kreatywnej.
+            </p>
+        </header>
+
+        <!-- STATYSTYKI -->
+        <div class="stats-section">
+            <h2 class="stats-title">📊 Nasza Społeczność</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📺</div>
+                    <div class="stat-number">381 tys.</div>
+                    <div class="stat-label">wyświetleń na YouTube w 2025 roku</div>
+                    <div style="margin-top: 10px; opacity: 0.8;">3500+ subskrybentów</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📱</div>
+                    <div class="stat-number">5,8 mln</div>
+                    <div class="stat-label">wyświetleń na TikTok w 2025 roku</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number">7300+</div>
+                    <div class="stat-label">obserwujących na Facebook</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🌍</div>
+                    <div class="stat-number">Polska + NL</div>
+                    <div class="stat-label">Zaangażowana społeczność Polaków w Holandii i nie tylko!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIAGRAM EMISJI -->
+        <div class="placement-section">
+            <h2>📍 Gdzie pojawi się Twoja reklama?</h2>
+            <p class="placement-subtitle">Każdy pakiet ma jasno określone miejsce w odcinku — bez niespodzianek</p>
+
+            <div class="timeline-wrapper">
+                <div class="timeline">
+                    <div class="tl-block">
+                        <div class="tl-bar tl-intro">INTRO</div>
+                        <div class="tl-label">start<br>odcinka</div>
+                    </div>
+                    <div class="tl-arrow">›</div>
+                    <div class="tl-block">
+                        <div class="tl-bar tl-excl">⭐ EXCLUSIVE</div>
+                        <div class="tl-label">zaraz po intro<br>1 slot</div>
+                    </div>
+                    <div class="tl-arrow">›</div>
+                    <div class="tl-block">
+                        <div class="tl-bar tl-content">TREŚĆ</div>
+                        <div class="tl-label">rozmowa<br>trwa...</div>
+                    </div>
+                    <div class="tl-arrow">›</div>
+                    <div class="tl-block">
+                        <div class="tl-bar tl-prem">PREMIUM ×2</div>
+                        <div class="tl-label">ok. 5. minuta<br>2 sloty</div>
+                    </div>
+                    <div class="tl-arrow">›</div>
+                    <div class="tl-block">
+                        <div class="tl-bar tl-content">TREŚĆ</div>
+                        <div class="tl-label">rozmowa<br>trwa...</div>
+                    </div>
+                    <div class="tl-arrow">›</div>
+                    <div class="tl-block">
+                        <div class="tl-bar tl-std">STANDARD ×3</div>
+                        <div class="tl-label">losowy moment<br>3 sloty</div>
+                    </div>
+                    <div class="tl-arrow">›</div>
+                    <div class="tl-block">
+                        <div class="tl-bar tl-content">KONIEC</div>
+                        <div class="tl-label"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rolki-note" style="margin-bottom: 16px;">
+                <strong>🎬 Grafika na końcu Rolek / Shortów</strong> (TikTok, YouTube, FB, IG):<br>
+                <span style="color: #ff8c00;">⭐ Exclusive</span> → stałe <strong>miejsce 1</strong> &nbsp;|&nbsp;
+                <span style="color: #64b5f6;">Premium ×2</span> → <strong>miejsce 2</strong> (rotacja obu firm na zmianę) &nbsp;|&nbsp;
+                <span style="opacity: 0.5;">Standard → bez grafiki na rolkach</span>
+            </div>
+
+            <div class="rolki-note" style="border-left-color: rgba(255,255,255,0.2);">
+                <strong>⚙️ Jak działa system automatycznych zastępstw?</strong><br>
+                Jeśli slot <span style="color:#ff8c00;">Exclusive</span> jest wolny → na jego miejsce wchodzi sponsor z <span style="color:#64b5f6;">Premium</span>.<br>
+                Jeśli slot <span style="color:#64b5f6;">Premium</span> jest wolny → na jego miejsce wchodzi sponsor ze <span style="color:#81c784;">Standard</span>.<br>
+                <span style="opacity: 0.6; font-size: 0.9em;">Twoja reklama zawsze zajmuje najlepsze dostępne miejsce.</span>
+            </div>
+        </div>
+
+        <!-- PAKIETY -->
+        <div class="packages-section">
+            <h2 class="section-title">📦 Pakiety Sponsorskie</h2>
+
+            <div class="packages-grid">
+
+                <!-- STANDARD -->
+                <div class="package-card standard">
+                    <div class="package-badge">3 sloty</div>
+                    <h3 class="package-name">Pakiet Standard</h3>
+
+                    <div class="slots-dots">
+                        <div class="slot-dot"></div>
+                        <div class="slot-dot"></div>
+                        <div class="slot-dot"></div>
+                    </div>
+                    <div class="slots-available">3 dostępne miejsca</div>
+
+                    <div class="package-price">250 €</div>
+                    <div class="package-period">netto / miesiąc · min. 3 miesiące</div>
+
+                    <ul class="package-features">
+                        <li><strong>Spot reklamowy w odcinku</strong> (max 20 sek.) — w losowym momencie w trakcie odcinka</li>
+                        <li><strong>Sponsorowany post</strong> na Facebook / Instagram</li>
+                        <li><strong>Link i nazwa firmy</strong> w opisach odcinków na YouTube i Spotify</li>
+                        <hr class="feature-divider">
+                        <li class="no-feature">Grafika na końcu Rolek / Shortów</li>
+                        <li class="no-feature">Konkurs dla słuchaczy</li>
+                    </ul>
+                    <div class="package-cta">
+                        <a href="mailto:contact@oscarroart.com?subject=Zainteresowanie%20pakietem%20Standard" class="cta-button">Zamawiam Standard</a>
+                    </div>
+                </div>
+
+                <!-- PREMIUM -->
+                <div class="package-card premium">
+                    <div class="package-badge">2 sloty</div>
+                    <h3 class="package-name">Pakiet Premium</h3>
+
+                    <div class="slots-dots" style="justify-content: center;">
+                        <div class="slot-dot"></div>
+                        <div class="slot-dot"></div>
+                    </div>
+                    <div class="slots-available">2 dostępne miejsca</div>
+
+                    <div class="package-price">500 €</div>
+                    <div class="package-period">netto / miesiąc · min. 3 miesiące</div>
+
+                    <ul class="package-features">
+                        <li><strong>Spot reklamowy w odcinku</strong> (max 20 sek.) — ok. 5. minuty rozmowy</li>
+                        <li><strong>Sponsorowany post</strong> na Facebook / Instagram</li>
+                        <li><strong>Link i nazwa firmy</strong> w opisach odcinków</li>
+                        <hr class="feature-divider">
+                        <li><strong>🎬 Grafika na końcu Rolek/Shortów</strong> — miejsce 2 (rotacja z drugim sponsorem Premium)</li>
+                        <li><strong>🎁 Konkurs dla słuchaczy</strong> (nagroda, voucher, usługa)</li>
+                        <li><strong>🏆 Wyłączność branżowa</strong> na czas trwania współpracy</li>
+                    </ul>
+                    <div class="package-cta">
+                        <a href="mailto:contact@oscarroart.com?subject=Zainteresowanie%20pakietem%20Premium" class="cta-button">Zamawiam Premium</a>
+                    </div>
+                </div>
+
+                <!-- EXCLUSIVE -->
+                <div class="package-card exclusive">
+                    <div class="package-badge">⭐ 1 slot</div>
+                    <h3 class="package-name">Pakiet Exclusive</h3>
+
+                    <div class="slots-dots" style="justify-content: center;">
+                        <div class="slot-dot"></div>
+                    </div>
+                    <div class="slots-available">Tylko 1 miejsce — jedno na kwartał</div>
+
+                    <div class="package-price">750 €</div>
+                    <div class="package-period">netto / miesiąc · min. 3 miesiące</div>
+
+                    <ul class="package-features">
+                        <li><strong>🥇 Pierwsza pozycja</strong> — emisja zaraz po intro, przed wszystkim</li>
+                        <li><strong>2× Spot reklamowy w odcinku</strong> (max 20 sek. każdy) — pierwszy zaraz po intro, drugi do ustalenia</li>
+                        <li><strong>Sponsorowany post</strong> na Facebook / Instagram</li>
+                        <li><strong>Link i nazwa firmy</strong> w opisach odcinków</li>
+                        <hr class="feature-divider">
+                        <li><strong>🎬 Grafika na końcu Rolek/Shortów</strong> — stałe miejsce 1 (zawsze pierwsze)</li>
+                        <li><strong>🎁 Konkurs dla słuchaczy</strong> (nagroda, voucher, usługa)</li>
+                        <li><strong>🏆 Wyłączność branżowa!</strong> Tylko jedna firma z Twojej branży</li>
+                    </ul>
+                    <div class="package-cta">
+                        <a href="mailto:contact@oscarroart.com?subject=Zainteresowanie%20pakietem%20Exclusive" class="cta-button">Zamawiam Exclusive</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SZYTA NA MIARĘ -->
+        <div class="custom-section">
+            <h3>🎯 Współpraca Szyta na Miarę</h3>
+            <p>
+                Każdy pakiet można <span class="highlight">elastycznie dopasować</span> do potrzeb sponsora.<br>
+                Masz inne pomysły? Porozmawiajmy!<br><br>
+                <strong>Współpraca jest zawsze szyta na miarę!</strong>
+            </p>
+        </div>
+
+        <!-- WAŻNE INFORMACJE -->
+        <div class="info-section">
+            <h3 class="section-title">📋 Ważne Informacje</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">⏰</div>
+                    <h4>Minimalny Okres Współpracy</h4>
+                    <p>3 miesiące (kwartał)</p>
+                    <div class="info-explanation">Długoterminowa obecność = większe zaangażowanie i rozpoznawalność</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🎨</div>
+                    <h4>Materiały Graficzne</h4>
+                    <p>Dostarcza Sponsor</p>
+                    <div class="info-explanation">Plansza w rozdzielczości 4K oraz baner 800x2160px w formacie PNG/JPG</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🔢</div>
+                    <h4>Limitowana Liczba Sponsorów</h4>
+                    <p>Tylko 6 miejsc łącznie</p>
+                    <div class="info-explanation">Dbamy o jakość przekazu — ograniczona liczba sponsorów gwarantuje że Twoja marka się wyróżnia. Po wypełnieniu slotów wpisujemy na listę oczekujących.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- POLITYKA REKLAMOWA -->
+        <div class="info-section">
+            <h2 class="section-title">🎯 Polityka Reklamowa</h2>
+            <div style="text-align: center; font-size: 1.3em; margin-bottom: 50px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                <strong>Od lutego 2026 wprowadziliśmy nowe zasady</strong>, które jeszcze bardziej chronią wartość Twojej inwestycji
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">📺</div>
+                    <h4>Odcinki Sponsorowane</h4>
+                    <p style="color: #ff6b00;">ZERO dodatkowych reklam</p>
+                    <div class="info-explanation">Jeśli ktoś płaci za odcinek z nim - dostaje 100% uwagi widzów bez konkurencji innych marek</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🎙️</div>
+                    <h4>Stali Sponsorzy</h4>
+                    <p style="color: #ff6b00;">Minimum 3 odcinki miesięcznie</p>
+                    <div class="info-explanation">Gwarancja emisji w regularnych odcinkach (te BEZ płacących gości)</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">⭐</div>
+                    <h4>Odcinki Extra</h4>
+                    <p style="color: #ff6b00;">Dodatkowe sponsorowane</p>
+                    <div class="info-explanation">Jeśli w miesiącu jest więcej niż 1 płacący gość - kolejni idą jako odcinki dodatkowe (np. w niedzielę)</div>
+                </div>
+            </div>
+            <div class="custom-section" style="margin-top: 40px;">
+                <h3>Dlaczego To Ważne?</h3>
+                <p style="font-size: 1.15em; line-height: 1.8;">
+                    ✅ <strong>Twoja reklama nie konkuruje</strong> z innymi w tym samym odcinku<br>
+                    ✅ <strong>Wyższe retention</strong> - widz nie jest zmęczony nadmiarem reklam<br>
+                    ✅ <strong>Lepsza skuteczność</strong> - pełna uwaga na Twoim przekazie
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2 class="section-title">❓ Najczęściej Zadawane Pytania</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Ile slotów jest dostępnych łącznie?</div>
+                    <div class="faq-answer">Łącznie 6 miejsc: 1 Exclusive, 2 Premium, 3 Standard. Po wypełnieniu wszystkich slotów współpraca jest możliwa dopiero po zwolnieniu miejsca przez dotychczasowego sponsora. Warto zapytać o dostępność z wyprzedzeniem.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Co oznacza "rotacja" w pakiecie Premium na końcu rolek?</div>
+                    <div class="faq-answer">Na końcu Reelsów/Shortów są 2 miejsca na grafiki. Exclusive zawsze zajmuje miejsce 1. Dwa miejsca Premium rotują się — w jednym odcinku pojawia się firma A, w kolejnym firma B, i tak na zmianę. Obie firmy mają równą ekspozycję.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Jak szybko można rozpocząć współpracę?</div>
+                    <div class="faq-answer">Po podpisaniu umowy i otrzymaniu materiałów graficznych, możemy wystartować już w następnym odcinku (zazwyczaj 4-7 dni).</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Ile odcinków ukaże się w ciągu kwartału (3 miesięcy)?</div>
+                    <div class="faq-answer">Minimum 9 odcinków (3/miesiąc), ale zazwyczaj publikujemy 4 odcinki miesięcznie - czyli około 12 odcinków z Twoją marką w kwartale!</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Jakie materiały graficzne powinienem przygotować?</div>
+                    <div class="faq-answer">Plansza w rozdzielczości 4K (3840x2160px) oraz baner w wymiarach 800x2160px, w formacie PNG lub JPG. Po podpisaniu umowy otrzymasz dokładne wytyczne techniczne.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Co jeśli moja branża jest już reprezentowana przez innego sponsora?</div>
+                    <div class="faq-answer">W pakiecie Exclusive gwarantujemy pełną wyłączność branżową. W pakietach Standard i Premium może być kilku sponsorów z tej samej branży jednocześnie. Napisz do nas — sprawdzimy dostępność w Twojej branży.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RABAT -->
+        <div class="discount-banner">
+            <div class="discount-icon">🎉</div>
+            <h3>Oferta Specjalna!</h3>
+            <p>Przy płatności za cały rok z góry otrzymujesz <span class="highlight-big">10% rabatu</span></p>
+            <p class="discount-subtext">To oszczędność do 900€ rocznie w pakiecie Exclusive!</p>
+        </div>
+
+        <!-- KONTAKT -->
+        <footer>
+            <h2 class="contact-title">📧 Skontaktuj się z nami</h2>
+            <div class="contact-info"><strong>Oskar Szpotański</strong></div>
+            <div class="contact-info"><a href="https://www.oscarroart.com" target="_blank">www.oscarroart.com</a></div>
+            <div class="contact-info"><a href="mailto:contact@oscarroart.com">contact@oscarroart.com</a></div>
+            <div class="contact-info">KVK 97228281</div>
+            <div class="oscarro-brand">
+                <div class="oscarro-logo">OSCARRO ART</div>
+                <div class="oscarro-tagline">Framing Life. Filming Stories.</div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
