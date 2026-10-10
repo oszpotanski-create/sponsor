@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oferta sponsorska — W ogniu pytań</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#131110;
+    --surface:#1b1815;
+    --card:#221e19;
+    --text:#f4efe7;
+    --muted:#a69d8f;
+    --line:rgba(244,239,231,.10);
+    --ember:#ff6a2b;
+    --ember-deep:#e23a12;
+    --amber:#f0a93b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:13px;
+    font-weight:600;
+    color:var(--ember);
+  }
+  h2{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+    font-weight:700;
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.05;
+    margin:14px 0 0;
+  }
+  p.lead{color:var(--muted);font-size:18px;max-width:60ch;margin-top:16px}
+  section{padding:88px 0;border-top:1px solid var(--line)}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:120px 0 96px;
+    border-top:none;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-30%;left:50%;
+    width:900px;height:900px;
+    transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(255,106,43,.20) 0%, rgba(226,58,18,.08) 35%, transparent 62%);
+    pointer-events:none;
+    z-index:0;
+  }
+  .hero .wrap{position:relative;z-index:1}
+  .brandline{display:flex;align-items:center;gap:12px;margin-bottom:40px}
+  .flame{width:34px;height:34px;flex:none}
+  .brandname{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:15px}
+  .hero h1{
+    font-family:'Anton',sans-serif;
+    font-weight:400;
+    text-transform:uppercase;
+    font-size:clamp(40px,7.2vw,88px);
+    line-height:.98;
+    letter-spacing:.005em;
+    max-width:15ch;
+  }
+  .hero h1 .fire{
+    background:linear-gradient(100deg,var(--amber),var(--ember) 45%,var(--ember-deep));
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .hero p{color:var(--muted);font-size:clamp(17px,2vw,20px);max-width:56ch;margin-top:26px}
+  .cta-row{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn{
+    display:inline-block;
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    font-size:15px;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:2px;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary{
+    color:#1a0d06;
+    background:linear-gradient(100deg,var(--amber),var(--ember));
+    box-shadow:0 8px 30px -8px rgba(255,106,43,.55);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px -8px rgba(255,106,43,.7)}
+  .btn-ghost{color:var(--text);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--ember);color:var(--ember)}
+
+  /* AUDIENCE */
+  .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:26px 24px}
+  .stat .num{font-family:'Anton',sans-serif;font-size:44px;line-height:1;color:var(--text)}
+  .stat .role{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--ember);margin:14px 0 6px}
+  .stat .desc{color:var(--muted);font-size:14.5px}
+  .aud-foot{margin-top:26px;color:var(--muted);font-size:15px}
+  .aud-foot b{color:var(--text);font-weight:600}
+
+  /* WHY */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+  .why{padding:4px 0}
+  .why .n{font-family:'Anton',sans-serif;color:var(--ember);font-size:26px;line-height:1}
+  .why h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:18px;margin:14px 0 8px;font-weight:600}
+  .why p{color:var(--muted);font-size:15.5px}
+
+  /* PACKAGES */
+  .pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+  .pkg{
+    position:relative;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:34px 30px;
+    display:flex;flex-direction:column;
+  }
+  .pkg.featured{
+    border-color:transparent;
+    background:
+      linear-gradient(var(--card),var(--card)) padding-box,
+      linear-gradient(140deg,var(--amber),var(--ember-deep)) border-box;
+    box-shadow:0 20px 60px -30px rgba(255,106,43,.5);
+  }
+  .tag{
+    position:absolute;top:-13px;left:30px;
+    font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:11.5px;font-weight:600;
+    color:#1a0d06;background:linear-gradient(100deg,var(--amber),var(--ember));
+    padding:6px 14px;border-radius:2px;
+  }
+  .pkg .name{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:15px;color:var(--muted);font-weight:600}
+  .pkg .price{font-family:'Anton',sans-serif;font-size:52px;line-height:1;margin:10px 0 2px}
+  .pkg .price span{font-family:'Inter',sans-serif;font-size:15px;color:var(--muted);font-weight:500}
+  .pkg .terms{color:var(--muted);font-size:13.5px;margin-bottom:24px}
+  .pkg ul{list-style:none;margin:0 0 28px;flex:1}
+  .pkg li{position:relative;padding:9px 0 9px 26px;font-size:15px;border-bottom:1px solid var(--line)}
+  .pkg li:last-child{border-bottom:none}
+  .pkg li::before{content:"";position:absolute;left:0;top:16px;width:8px;height:8px;border-radius:50%;background:var(--ember)}
+  .pkg li.plus{font-weight:600}
+  .pkg li.plus::before{background:var(--amber)}
+  .slots{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:11.5px;color:var(--muted);margin-bottom:16px}
+
+  /* RULES */
+  .rules{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+  .rule{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px}
+  .rule h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:15px;margin-bottom:8px;font-weight:600}
+  .rule p{color:var(--muted);font-size:14.5px}
+  .note{margin-top:26px;color:var(--muted);font-size:15px}
+  .note b{color:var(--amber);font-weight:600}
+
+  /* CONTACT */
+  .contact{text-align:center;background:var(--surface)}
+  .contact h2{margin-bottom:8px}
+  .contact .who{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:15px;margin:22px 0 4px}
+  .contact a.mail{color:var(--ember);text-decoration:none;font-size:20px;font-weight:600}
+  .contact a.mail:hover{text-decoration:underline}
+  .contact .kvk{color:var(--muted);font-size:13px;margin-top:24px;letter-spacing:.03em}
+
+  footer{padding:30px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+
+  @media (max-width:760px){
+    .aud-grid,.why-grid,.pkg-grid,.rules{grid-template-columns:1fr}
+    section{padding:64px 0}
+    .hero{padding:88px 0 72px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="brandline">
+        <svg class="flame" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2c1 3-1.5 4.5-1.5 7 0 1.4 1 2.3 1 2.3s-.6-2 .8-3.2c1.6 2 3.2 3.4 3.2 6.4A5.5 5.5 0 1 1 6.5 12c0-1 .3-1.8.3-1.8s.7 1.3 1.7 1.6C7.8 8.7 10.6 6.8 12 2Z" fill="url(#g)"/>
+          <defs><linearGradient id="g" x1="6" y1="2" x2="18" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#f0a93b"/><stop offset="1" stop-color="#e23a12"/></linearGradient></defs>
+        </svg>
+        <span class="brandname">W ogniu pytań</span>
+      </div>
+      <h1>Twoja marka trafia do Polaków w Holandii <span class="fire">dokładnie wtedy, gdy podejmują decyzje</span></h1>
+      <p>Kupują domy, otwierają firmy, szukają księgowego, doradcy i sprawdzonych usług. Zamiast przypadkowego zasięgu dostajesz konkretną, zaufaną publiczność w miejscu, którego słucha regularnie.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:info@oscarroart.com?subject=Zainteresowanie%20sponsoringiem%20W%20ogniu%20pyta%C5%84">Zostań partnerem</a>
+        <a class="btn btn-ghost" href="#pakiety">Zobacz pakiety</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Kto ogląda</span>
+      <h2>Jedyny taki polski podcast w Holandii</h2>
+      <p class="lead">Najważniejsze nie są same liczby, tylko to, że stoją za nimi konkretni ludzie: Polonia w Holandii, która na co dzień korzysta z usług dla rodaków.</p>
+      <div class="aud-grid">
+        <div class="stat">
+          <div class="num">802&nbsp;tys.</div>
+          <div class="role">YouTube · ostatnie 12 miesięcy</div>
+          <div class="desc">Wyświetleń w ostatnim roku. Tu ludzie oglądają w całości i wracają. Ponad 6400 subskrybentów.</div>
+        </div>
+        <div class="stat">
+          <div class="num">7,1&nbsp;mln</div>
+          <div class="role">TikTok · ostatnie 12 miesięcy</div>
+          <div class="desc">Zasięg i rozpoznawalność. Ponad 13 tys. obserwujących i krótkie formy, które niosą markę dalej niż sam odcinek.</div>
+        </div>
+        <div class="stat">
+          <div class="num">14,8&nbsp;tys.</div>
+          <div class="role">Facebook</div>
+          <div class="desc">Zaangażowana społeczność, która komentuje, udostępnia i realnie reaguje na tematy.</div>
+        </div>
+      </div>
+      <p class="aud-foot"><b>Publiczność:</b> Polacy w Holandii, a także w Polsce. Odbiorca, który akurat teraz mierzy się z kupnem domu, zakładaniem firmy i codziennymi sprawami na emigracji.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Dlaczego to działa dla firm</span>
+      <h2>Uwaga, a nie tylko zasięg</h2>
+      <div class="why-grid">
+        <div class="why">
+          <div class="n">01</div>
+          <h3>Trafiasz do właściwych ludzi</h3>
+          <p>To nie przypadkowe wyświetlenia. To Polonia w NL w momencie, gdy szuka usług i marek, którym może zaufać.</p>
+        </div>
+        <div class="why">
+          <div class="n">02</div>
+          <h3>Twoja reklama się nie gubi</h3>
+          <p>Ograniczona liczba partnerów i jasne miejsce w odcinku sprawiają, że nie konkurujesz z tłumem innych marek.</p>
+        </div>
+        <div class="why">
+          <div class="n">03</div>
+          <h3>Partnerzy zostają na dłużej</h3>
+          <p>Nasz najdłuższy partner współpracuje z nami od dwóch lat. To najprostszy dowód, że ta obecność się firmie opłaca.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pakiety">
+    <div class="wrap">
+      <span class="eyebrow">Współpraca</span>
+      <h2>Dwa proste pakiety</h2>
+      <p class="lead">Bez ukrytych zasad i skomplikowanej mechaniki. Wybierasz poziom, my zajmujemy się resztą.</p>
+      <div class="pkg-grid">
+
+        <div class="pkg featured">
+          <span class="tag">Najczęściej wybierany</span>
+          <div class="slots">Standard · 3 miejsca</div>
+          <div class="name">Standard</div>
+          <div class="price">250&nbsp;€ <span>/ miesiąc netto</span></div>
+          <div class="terms">Minimalny okres współpracy: 3 miesiące</div>
+          <ul>
+            <li>Spot reklamowy w odcinku, do 20 sekund, w trakcie rozmowy</li>
+            <li>Sponsorowany post na Facebooku i Instagramie</li>
+            <li>Nazwa i link firmy w opisie odcinków na YouTube i Spotify</li>
+            <li>Grafika na końcu Rolek i Shortów (TikTok, YouTube, FB, IG), rotacyjnie między partnerami</li>
+          </ul>
+          <a class="btn btn-primary" href="mailto:info@oscarroart.com?subject=Zainteresowanie%20pakietem%20Standard">Wybieram Standard</a>
+        </div>
+
+        <div class="pkg">
+          <div class="slots">Premium · zostało 1 miejsce</div>
+          <div class="name">Premium</div>
+          <div class="price">500&nbsp;€ <span>/ miesiąc netto</span></div>
+          <div class="terms">Minimalny okres współpracy: 3 miesiące</div>
+          <ul>
+            <li>Wszystko z pakietu Standard</li>
+            <li class="plus">Lepsze miejsce spotu, na początku rozmowy (ok. 5. minuty)</li>
+            <li class="plus">Konkurs dla słuchaczy z Twoją nagrodą lub voucherem</li>
+            <li class="plus">Wyłączność branżowa, tylko jedna firma z Twojej branży</li>
+          </ul>
+          <a class="btn btn-ghost" href="mailto:info@oscarroart.com?subject=Zainteresowanie%20pakietem%20Premium">Wybieram Premium</a>
+        </div>
+
+      </div>
+      <p class="note"><b>Płatność z góry za rok: 10% taniej.</b> Masz inny pomysł na współpracę? Napisz, dopasujemy ją do Twoich potrzeb.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Zasady</span>
+      <h2>Chronimy Twoją inwestycję</h2>
+      <div class="rules">
+        <div class="rule">
+          <h3>Regularna emisja</h3>
+          <p>Stali sponsorzy pojawiają się w co najmniej 3 odcinkach miesięcznie, zwykle w czterech.</p>
+        </div>
+        <div class="rule">
+          <h3>Bez przeładowania reklamą</h3>
+          <p>Ograniczona liczba partnerów. Mniej reklam w odcinku to wyższa uwaga widza i lepsza skuteczność.</p>
+        </div>
+        <div class="rule">
+          <h3>Materiały</h3>
+          <p>Grafikę dostarcza sponsor. Dokładne wytyczne techniczne przekazujemy po ustaleniu współpracy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <span class="eyebrow">Kontakt</span>
+      <h2>Porozmawiajmy o współpracy</h2>
+      <p class="lead" style="margin-left:auto;margin-right:auto">Napisz w dwóch zdaniach, czym się zajmujesz. Odpiszę z dostępnymi miejscami i szczegółami.</p>
+      <div class="who">Oskar Szpotański</div>
+      <a class="mail" href="mailto:info@oscarroart.com?subject=Wsp%C3%B3%C5%82praca%20sponsorska%20W%20ogniu%20pyta%C5%84">info@oscarroart.com</a>
+      <div class="kvk">OSCARRO ART · KVK 97228281 · oscarroart.com</div>
+    </div>
+  </section>
+
+  <footer>
+    W ogniu pytań — oferta sponsorska obowiązuje od 1 lipca 2026
+  </footer>
+
+</body>
+</html>
